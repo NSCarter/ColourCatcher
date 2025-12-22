@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://kv163jkeek1a"]
+
+[ext_resource type="Script" uid="uid://bc1fg1cnmby86" path="res://Scripts/bucket.gd" id="1_kyrtd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0h7d3"]
+size = Vector2(78, 88)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+input_pickable = true
+script = ExtResource("1_kyrtd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 78.0
+offset_bottom = 88.0
+mouse_filter = 2
+color = Color(0.427493, 0.42749307, 0.42749307, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(39, 44)
+shape = SubResource("RectangleShape2D_0h7d3")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
